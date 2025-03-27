@@ -1,4 +1,5 @@
 module.exports = {
+    type: "module",
     "pack": {
         "name": "TestPack",
         "author": "M0D1N",
