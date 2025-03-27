@@ -1,5 +1,3 @@
-export var pack 
-
 var pack = {
     "name": "TestPack",
     "author": "M0D1N",
@@ -41,3 +39,5 @@ var pack = {
         }
 ]
 }
+
+export { pack } 
