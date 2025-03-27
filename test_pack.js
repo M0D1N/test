@@ -1,13 +1,13 @@
-module.exports = {
-    type: "module",
-    "pack": {
-        "name": "TestPack",
-        "author": "M0D1N",
-        "ProfileLink": "https://playentry.org/profile/6026539845673d648281f982",
-        "Category": "test",
-        "PackIcon": "",
-        "CategoryIcon": ""
-    },
+export var pack 
+
+var pack = {
+    "name": "TestPack",
+    "author": "M0D1N",
+    "ProfileLink": "https://playentry.org/profile/6026539845673d648281f982",
+    "Category": "test",
+    "PackIcon": "",
+    "CategoryIcon": "",
+
     "blocks": [
         {
         "template": "콘솔에 %1출력하기 %2",
