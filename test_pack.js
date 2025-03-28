@@ -1,4 +1,4 @@
-var pack = {
+export var pack = {
     "name": "TestPack",
     "author": "M0D1N",
     "ProfileLink": "https://playentry.org/profile/6026539845673d648281f982",
@@ -39,5 +39,3 @@ var pack = {
         }
 ]
 }
-
-export { pack } 
