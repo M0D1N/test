@@ -2,12 +2,14 @@ export var pack = {
     "name": "TestPack",
     "author": "M0D1N",
     "ProfileLink": "https://playentry.org/profile/6026539845673d648281f982",
+    "PackLink": null,
     "Category": "test",
     "PackIcon": "",
-    "CategoryIcon": "",
+    "CategoryIcon": ""
+}
 
-    "blocks": [
-        {
+export var blocks = [
+    {
         "template": "콘솔에 %1출력하기 %2",
         "type": "console_log",
         "class": "entry",
@@ -38,4 +40,3 @@ export var pack = {
         "isNotFor": []
         }
 ]
-}
