@@ -22,7 +22,7 @@ export var blocks = [
                 "type": "Block",
                 "accept": "string",
                 "defaultType": "number",
-                "defaultValue": "Hello, World!",
+                "defaultValue": ["Hello, World!"],
                 "key": "VALUE"
             },
             {
@@ -31,7 +31,7 @@ export var blocks = [
                 "size": 11
             }
         ],
-        "py": "Entry.console_log(%1)",
+        "py": ["Entry.console_log(%1)"],
         "func": function(sprite, script) {
             const value = script.getStringValue('VALUE', script);
             return console.log(value)
