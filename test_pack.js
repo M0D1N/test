@@ -3,11 +3,13 @@ export var pack = {
     "author": "M0D1N",
     "ProfileLink": "https://playentry.org/profile/6026539845673d648281f982",
     "PackLink": null,
-    "Category": "test",
-    "Category_name": "테스트",
     "PackIcon": "",
-    "CategoryIcon": "https://playentry.org/uploads/e8/49/e8494736m1p50q5a2n6nee8421e0kqg5.png"
+    "Category": "test",
+    "CategoryName": "테스트",
+    "CategoryIcon": "../../../uploads/e8/49/e8494736m1p50q5a2n6nee8421e0kqg5.png",
+    "CategoryBlockIcon": "../../../uploads/e8/49/e8494736m1p50q5a2n6nee8421e0kqg5.png"
 }
+    
 
 export var blocks = [
     {
