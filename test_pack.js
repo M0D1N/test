@@ -6,7 +6,7 @@ export var pack = {
     "PackIcon": "",
     "Category": "test",
     "CategoryName": "테스트",
-    "CategoryIcon": "../../../uploads/e8/49/e8494736m1p50q5a2n6nee8421e0kqg5.png",
+    "CategoryIcon": "../../../../../uploads/e8/49/e8494736m1p50q5a2n6nee8421e0kqg5.png",
     "CategoryBlockIcon": "../../../uploads/e8/49/e8494736m1p50q5a2n6nee8421e0kqg5.png"
 }
     
