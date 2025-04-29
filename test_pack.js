@@ -67,16 +67,16 @@ export var blocks = [
                 "key": "MESSAGE"
             },
             {
-                "type": "DropdownDynamic",
+                "type": "Dropdown",
                 "options": [
                     [ "유지되는", "NotDispose" ],
                     [ "사라지는", "Dispose" ],
                 ],
-                "defaultValue": ["NotDispose"],
+                "defaultValue": "NotDispose",
                 "key": "OPTION"
             },
             {
-                "type": "DropdownDynamic",
+                "type": "Dropdown",
                 "options": [
                     [ "알림", "alert" ],
                     [ "경고", "warning" ],
@@ -87,7 +87,7 @@ export var blocks = [
                 "key": "TYPE"
             }
         ],
-        "py": ["Entry.console_log(%1)"],
+        "py": ["Entry.alert(%1, %2, %3, %4)"],
         "func": function(sprite, script) {
             const title = script.getNumberField("TITLE", script);
             const message = script.getNumberField("MESSAGE", script);
