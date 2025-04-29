@@ -67,7 +67,7 @@ export var blocks = [
                 "key": "MESSAGE"
             },
             {
-                "type": "Dropdown",
+                "type": "DropdownDynamic",
                 "options": [
                     [ "유지되는", "NotDispose" ],
                     [ "사라지는", "Dispose" ],
@@ -76,7 +76,7 @@ export var blocks = [
                 "key": "OPTION"
             },
             {
-                "type": "Dropdown",
+                "type": "DropdownDynamic",
                 "options": [
                     [ "알림", "alert" ],
                     [ "경고", "warning" ],
@@ -93,12 +93,12 @@ export var blocks = [
             const message = script.getNumberField("MESSAGE", script);
             const option = script.getNumberField("OPTION", script);
             const type = script.getNumberField("TYPE", script);
-            var dispose;
 
-            if (option == "NotDispose") dispose = true;
-            else dispose = false;
+            switch(option) {
+                case "NotDispose": Entry.toast.$[type](title, message, true);
+                case "Dispose": Entry.toast.$[type](title, message, false);
+            }
 
-            entry.toast.$[type](title, message, dispose);
         },
         "isFor": [],
         "isNotFor": []
