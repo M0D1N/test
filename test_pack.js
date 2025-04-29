@@ -21,7 +21,7 @@ export var blocks = [
     {
         "template": "콘솔에 %1출력하기 %2",
         "type": "console_log",
-        "class": "console",
+        "class": "entry",
         "skeleton": "basic",
         "color": [ "#303030", "#000000", "#ffffff" ],
         "statements": [],
@@ -44,9 +44,9 @@ export var blocks = [
         "isNotFor": []
     },
     {
-        "template": "%1, %2로 %3%4메세지 보내기 %5",
+        "template": "%1, %2의의 %3%4메세지 보내기 %5",
         "type": "alert",
-        "class": "alert",
+        "class": "entry",
         "skeleton": "basic",
         "color": [ "#303030", "#000000", "#ffffff" ],
         "statements": [],
@@ -82,7 +82,8 @@ export var blocks = [
                     [ "경고", "warning" ],
                     [ "성공", "success" ],
                 ],
-                "defaultValue": ["Alert"],
+                "defaultType": "default_dropdown_block",
+                "defaultValue": ["alert"],
                 "key": "TYPE"
             }
         ],
@@ -92,6 +93,7 @@ export var blocks = [
             const message = script.getNumberField("MESSAGE", script);
             const option = script.getNumberField("OPTION", script);
             const type = script.getNumberField("TYPE", script);
+            var dispose;
 
             if (option == "NotDispose") dispose = true;
             else dispose = false;
