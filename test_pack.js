@@ -45,7 +45,7 @@ export var blocks = [
     },
     {
         "template": "%1, %2로 %3 알림 보내기 %4",
-        "type": "console_log",
+        "type": "alert",
         "class": "alert",
         "skeleton": "basic",
         "color": [ "#303030", "#000000", "#ffffff" ],
