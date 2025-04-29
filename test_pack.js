@@ -44,7 +44,7 @@ export var blocks = [
         "isNotFor": []
     },
     {
-        "template": "%1, %2로 %3 알림 보내기 %4",
+        "template": "%1, %2로 %3%4메세지 보내기 %5",
         "type": "alert",
         "class": "alert",
         "skeleton": "basic",
@@ -67,17 +67,36 @@ export var blocks = [
                 "key": "MESSAGE"
             },
             {
-                type: "Dropdown",
-                options: [
+                "type": "Dropdown",
+                "options": [
                     [ "유지되는", "NotDispose" ],
                     [ "사라지는", "Dispose" ],
                 ],
+                "defaultValue": ["NotDispose"],
+                "key": "OPTION"
+            },
+            {
+                "type": "Dropdown",
+                "options": [
+                    [ "알림", "alert" ],
+                    [ "경고", "warning" ],
+                    [ "성공", "success" ],
+                ],
+                "defaultValue": ["Alert"],
+                "key": "TYPE"
             }
         ],
         "py": ["Entry.console_log(%1)"],
         "func": function(sprite, script) {
-            const value = script.getStringValue('VALUE', script);
-            return console.log(value)
+            const title = script.getNumberField("TITLE", script);
+            const message = script.getNumberField("MESSAGE", script);
+            const option = script.getNumberField("OPTION", script);
+            const type = script.getNumberField("TYPE", script);
+
+            if (option == "NotDispose") dispose = true;
+            else dispose = false;
+
+            entry.toast.$[type](title, message, dispose);
         },
         "isFor": [],
         "isNotFor": []
