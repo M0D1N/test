@@ -44,7 +44,7 @@ export var blocks = [
         "isNotFor": []
     },
     {
-        "template": "%1, %2의의 %3%4메세지 보내기 %5",
+        "template": "%1, %2의 %3%4메세지 보내기 %5",
         "type": "alert",
         "class": "entry",
         "skeleton": "basic",
@@ -78,12 +78,12 @@ export var blocks = [
             {
                 "type": "Dropdown",
                 "options": [
-                    [ "알림", "alert" ],
-                    [ "경고", "warning" ],
-                    [ "성공", "success" ],
+                    [ "알림", "Alert" ],
+                    [ "경고", "Warning" ],
+                    [ "성공", "Success" ],
                 ],
                 "defaultType": "default_dropdown_block",
-                "defaultValue": ["alert"],
+                "defaultValue": "Alert",
                 "key": "TYPE"
             }
         ],
@@ -94,9 +94,13 @@ export var blocks = [
             const option = script.getNumberField("OPTION", script);
             const type = script.getNumberField("TYPE", script);
 
-            switch(option) {
-                case "NotDispose": Entry.toast.$[type](title, message, true);
-                case "Dispose": Entry.toast.$[type](title, message, false);
+            var dispose = false;
+            if (option == "NotDispose") dispose = true
+
+            switch(type) {
+                case "Alert": Entry.toast.alert(title, message, dispose);
+                case "Warning": Entry.toast.warning(title, message, dispose);
+                case "Success": Entry.toast.success(title, message, dispose);
             }
 
         },
