@@ -98,9 +98,9 @@ export var blocks = [
             if (option == "NotDispose") dispose = true
 
             switch(type) {
-                case "Alert": Entry.toast.alert(title, message, dispose);
-                case "Warning": Entry.toast.warning(title, message, dispose);
-                case "Success": Entry.toast.success(title, message, dispose);
+                case "Alert": return Entry.toast.alert(title, message, dispose);
+                case "Warning": return Entry.toast.warning(title, message, dispose);
+                case "Success": return Entry.toast.success(title, message, dispose);
             }
 
         },
