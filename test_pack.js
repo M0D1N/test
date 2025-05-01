@@ -17,7 +17,7 @@ export var pack = {
 }
     
 
-export var blocks = [
+export var blocks = [ 
     {
         "template": "콘솔에 %1출력하기 %2",
         "type": "console_log",
@@ -44,65 +44,17 @@ export var blocks = [
         "isNotFor": []
     },
     {
-        "template": "%1, %2의 %3%4메세지 보내기 %5",
-        "type": "alert",
+        "template": "UserAgent",
+        "type": "Useragent",
         "class": "entry",
-        "skeleton": "basic",
+        "skeleton": "basic_string_field",
         "color": [ "#303030", "#000000", "#ffffff" ],
         "statements": [],
         "events": {},
-        "params": [
-            {
-                "type": "Block",
-                "accept": "string",
-                "defaultType": "number",
-                "defaultValue": ["제목"],
-                "key": "TITLE"
-            },
-            {
-                "type": "Block",
-                "accept": "string",
-                "defaultType": "number",
-                "defaultValue": ["내용"],
-                "key": "MESSAGE"
-            },
-            {
-                "type": "Dropdown",
-                "options": [
-                    [ "유지되는", "NotDispose" ],
-                    [ "사라지는", "Dispose" ],
-                ],
-                "defaultValue": "NotDispose",
-                "key": "OPTION"
-            },
-            {
-                "type": "Dropdown",
-                "options": [
-                    [ "알림", "Alert" ],
-                    [ "경고", "Warning" ],
-                    [ "성공", "Success" ],
-                ],
-                "defaultType": "default_dropdown_block",
-                "defaultValue": "Alert",
-                "key": "TYPE"
-            }
-        ],
-        "py": ["Entry.alert(%1, %2, %3, %4)"],
+        "params": [],
+        "py": ["Entry.UserAgent"],
         "func": function(sprite, script) {
-            const title = script.getNumberField("TITLE", script);
-            const message = script.getNumberField("MESSAGE", script);
-            const option = script.getNumberField("OPTION", script);
-            const type = script.getNumberField("TYPE", script);
-
-            var dispose = false;
-            if (option == "NotDispose") dispose = true
-
-            switch(type) {
-                case "Alert": return Entry.toast.alert(title, message, dispose);
-                case "Warning": return Entry.toast.warning(title, message, dispose);
-                case "Success": return Entry.toast.success(title, message, dispose);
-            }
-
+            return window.navigator.userAgent
         },
         "isFor": [],
         "isNotFor": []
