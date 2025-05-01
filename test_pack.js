@@ -58,5 +58,27 @@ export var blocks = [
         },
         "isFor": [],
         "isNotFor": []
-    }
+    },
+    {
+        "template": "%1",
+        "type": "can_enable_WebGPU",
+        "class": "entry",
+        "skeleton": "basic",
+        "color": [ "#303030", "#000000", "#ffffff" ],
+        "statements": [],
+        "events": {},
+        "params": [
+            {
+                "type": "Text",
+                "text": "이 기기에서 WebGPU를 사용할 수 있는가?"
+            }
+        ],
+        "py": ["Entry.can_enable_WebGPU()"],
+        "func": function(sprite, script) {
+            if (navigator.gpu) return true
+            else return false
+        },
+        "isFor": [],
+        "isNotFor": []
+    },
 ]
