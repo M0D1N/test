@@ -63,7 +63,7 @@ export var blocks = [
         "template": "%1",
         "type": "can_enable_WebGPU",
         "class": "entry",
-        "skeleton": "basic",
+        "skeleton": "basic_boolean_field",
         "color": [ "#303030", "#000000", "#ffffff" ],
         "statements": [],
         "events": {},
