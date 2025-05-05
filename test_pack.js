@@ -81,4 +81,72 @@ export var blocks = [
         "isFor": [],
         "isNotFor": []
     },
+    {
+        "template": "해피캣",
+        "type": "hapicat",
+        "class": "fun",
+        "skeleton": "basic_string_field",
+        "color": [ "#303030", "#ffd580", "#ffffff" ],
+        "statements": [],
+        "events": {},
+        "params": [],
+        "py": ["Entry.can_enable_WebGPU()"],
+        "func": function(sprite, script) {
+            return "해피해피해피 해피해피해피해피해피피"
+        },
+        "isFor": [],
+        "isNotFor": []
+    },
+    {
+        "template": "어짜피 흰수염은 한물간 시대의 패배자니까! => %1의 대답",
+        "type": "angry_sshangks",
+        "class": "fun",
+        "skeleton": "basic_string_field",
+        "color": [ "#303030", "#ffd580", "#ffffff" ],
+        "statements": [],
+        "events": {},
+        "params": [
+            {
+                "type": "Block",
+                "accept": "string",
+                "defaultType": "number",
+                "defaultValue": ["샹크스"],
+                "key": "VALUE"
+            }
+        ],
+        "py": ["Entry.can_enable_WebGPU()"],
+        "func": function(sprite, script) {
+            const value = script.getStringValue('VALUE', script);
+            return value + ": 뭐...? 지금 그말... 당장 취소해..!"
+        },
+        "isFor": [],
+        "isNotFor": []
+    },
+    {
+        "template": "그 말.. %1하겠다.",
+        "type": "hm",
+        "class": "fun",
+        "skeleton": "basic_string_field",
+        "color": [ "#303030", "#ffd580", "#ffffff" ],
+        "statements": [],
+        "events": {},
+        "params": [
+            {
+                "type": "Dropdown",
+                "options": [
+                    ["취소", "cancel"],
+                    ["취소할줄알았냐?취소안", "babo_na_cancel_anham"]
+                ],
+                "key": "VALUE"
+            }
+        ],
+        "py": ["Entry.can_enable_WebGPU()"],
+        "func": function(sprite, script) {
+            const value = script.getNumberField("VALUE", script);
+            if (value == "cancel") return "진짜요?ㄳ합니다."
+            else return "야!!!!!!!!!!!!!!!!!!! ...취소해주세요제발요ㅠㅠㅠㅠㅠ"
+        },
+        "isFor": [],
+        "isNotFor": []
+    },
 ]
