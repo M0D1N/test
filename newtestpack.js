@@ -109,7 +109,7 @@ export var blocks = [
         "py": ["Entry.change_shape_to_uploaded_image(%1)"],
         "func": function(sprite, script) {
             const type = script.getStringField("TYPE", script);
-            const link = script.getStringField("LINK", script);
+            const link = script.getStringValue("LINK", script);
             sprite.picture = {
                 "id": "uploaded",
                 "fileurl": link,
