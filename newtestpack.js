@@ -85,7 +85,7 @@ export var blocks = [
         "template": "현재 모양을 %1형식의 %2로 바꾸기 %3",
         "type": "console_log",
         "class": "shape",
-        "skeleton": "basic_string_field",
+        "skeleton": "basic",
         "color": [ "#303030", "#000000", "#ffffff" ],
         "statements": [],
         "events": {},
