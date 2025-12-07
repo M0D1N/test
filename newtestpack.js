@@ -83,7 +83,7 @@ export var blocks = [
     },
     {
         "template": "현재 모양을 %1형식의 %2로 바꾸기 %3",
-        "type": "console_log",
+        "type": "change_shape_to_uploaded_image",
         "class": "shape",
         "skeleton": "basic",
         "color": [ "#303030", "#000000", "#ffffff" ],
