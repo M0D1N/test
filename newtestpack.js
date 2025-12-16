@@ -82,22 +82,14 @@ export var blocks = [
         "isNotFor": []
     },
     {
-        "template": "현재 모양을 %1형식의 %2로 바꾸기 %3",
-        "type": "change_shape_to_uploaded_image",
+        "template": "모양을 %1로부터 추가하기%2",
+        "type": "add_shape_with",
         "class": "shape",
         "skeleton": "basic",
         "color": [ "#303030", "#000000", "#ffffff" ],
         "statements": [],
         "events": {},
         "params": [
-            {
-                "type": "Dropdown",
-                "options": [
-                    ["png", "png"],
-                    ["svg", "svg"]
-                ],
-                "key": "TYPE"
-            },
             {
                 "type": "Block",
                 "accept": "string",
@@ -106,16 +98,15 @@ export var blocks = [
                 "key": "LINK"
             }
         ],
-        "py": ["Entry.change_shape_to_uploaded_image(%1)"],
+        "py": ["Entry.add_shape_with(%1)"],
         "func": function(sprite, script) {
-            const type = script.getStringField("TYPE", script);
             const link = script.getStringValue("LINK", script);
             sprite.picture = {
-                "id": "uploaded",
+                "id": `uploaded-${link}`,
                 "fileurl": link,
                 "thumbUrl": null,
-                "name": "외부에서 불러온 이미지",
-                "imageType": type,
+                "name": link,
+                "imageType": "svg",
                 "dimension": {
                     "width": 100,
                     "height": 100,
