@@ -101,7 +101,7 @@ export var blocks = [
         "py": ["Entry.add_shape_with(%1)"],
         "func": function(sprite, script) {
             const link = script.getStringValue("LINK", script);
-            sprite.picture = {
+            sprite.parent.pictures.push = {
                 "id": `uploaded-${link}`,
                 "fileurl": link,
                 "thumbUrl": null,
